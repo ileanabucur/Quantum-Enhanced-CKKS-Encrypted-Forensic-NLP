@@ -1,0 +1,25 @@
+name: Demo Artifacts
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python - <<'PY'
+          import nltk
+          nltk.download('punkt'); nltk.download('stopwords')
+          PY
+          python scripts/generate_dataset.py --out data/samples/synthetic.csv --n 600
+          python scripts/train.py classic --data data/samples/synthetic.csv --model logreg --emb tfidf
+          python scripts/examples_report.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: results
+          path: results

@@ -1,0 +1,13 @@
+[project]
+name = "qhe-forensic-nlp"
+version = "0.3.1"
+description = "Quantum-enhanced, privacy-preserving NLP with HE inference and a small VQC. EN + GitHub Pages."
+authors = [{name="Ileana Bucur"}]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools]
+packages = ["qhe_forensic_nlp", "qhe_forensic_nlp.models"]
+package-dir = {"" = "src"}
+include-package-data = true

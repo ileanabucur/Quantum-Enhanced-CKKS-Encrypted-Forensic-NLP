@@ -1,0 +1,2 @@
+pre-commit>=3.7
+pdoc>=14
