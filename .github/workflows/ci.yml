@@ -22,7 +22,8 @@ jobs:
           PY
 
       - name: Sanity import
-        run: python -c "import qhe_forensic_nlp as m; print('import ok, version=', getattr(m,'__version__','?'))"
+        run: |
+          python -c "import sys, os; print('PYTHONPATH=', os.environ.get('PYTHONPATH')); import qhe_forensic_nlp as m; print('import OK from', m.__file__)"
 
       - name: Run tests
         run: pytest -q --disable-warnings --maxfail=1
