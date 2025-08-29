@@ -1,15 +1,21 @@
-__pycache__/
-*.py[cod]
-*$py.class
-.venv/
-env/
-venv/
-.ipynb_checkpoints
-.vscode/
-.idea/
-logs/
-*.log
-models/
-results/
-.DS_Store
-Thumbs.db
+# artifact dirs (solo in root)
+ /models/
+ /results/
+ /data/
+
+# build / docs cache
+ /dist/
+ /build/
+ *.egg-info/
+ docs/api/
+
+# python cache
+ __pycache__/
+ *.py[cod]
+
+# virtual env
+ .venv/
+
+# --- very important: re-include the package subdir ---
+!src/qhe_forensic_nlp/models/
+!src/qhe_forensic_nlp/models/**

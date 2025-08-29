@@ -1,4 +1,3 @@
-````markdown
 # Quantum-Enhanced, CKKS-Encrypted Forensic NLP
 
 **A compact research toolkit** for sensitive-text classification that compares:
